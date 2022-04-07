@@ -298,11 +298,13 @@ void StartBlink01(void *argument)
   {
 	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 	  char msg[] = "The LED blinks.";
-	  // TODO: convert char to int
-	  if (osMessagePut(blink01Handle, msg, 0) == osOK){
+	  if (osMessageQueuePut(myQueue01Handle, msg, 40, 0) == osOK){
 		  printf("Successfully send the message to queue.");
-		  //TODO: the return value is int, convert int to char
-		  // if (osMessageGet(blink01Handle, 0) == )
+		  char receive_msg;
+		  if (osMessageQueueGet(myQueue01Handle, &receive_msg, NULL, 0U) == osOK ){
+			  printf(&receive_msg);
+			  osDelay(5000);
+		  }
 	  }
 	  osDelay(500);
   }

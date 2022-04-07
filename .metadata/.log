@@ -16,3 +16,58 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-04-05 21:52:19.792
 !MESSAGE Indexed 'logBlink' (25 sources, 84 headers) in 3.24 sec: 6,221 declarations; 38,547 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0045%)
+!SESSION 2022-04-07 15:20:33.731 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-07 15:20:43.128
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-07 15:20:43.189
+!MESSAGE Log4j initialized with config file D:\Mengjie\STM32Cube-workspace-AV\DataLog\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-07 15:20:53.405
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.remote.core 4 0 2022-04-07 15:39:45.715
+!MESSAGE logBink
+
+!ENTRY org.eclipse.remote.core 4 0 2022-04-07 15:39:47.396
+!MESSAGE logBink
+
+!ENTRY org.eclipse.remote.core 4 0 2022-04-07 15:39:48.458
+!MESSAGE logBink
+
+!ENTRY org.eclipse.remote.core 4 0 2022-04-07 15:39:49.755
+!MESSAGE logBink
+
+!ENTRY org.eclipse.remote.core 4 0 2022-04-07 15:39:50.952
+!MESSAGE logBink
+
+!ENTRY org.eclipse.remote.core 4 0 2022-04-07 15:39:51.162
+!MESSAGE logBink
+
+!ENTRY org.eclipse.remote.console 4 0 2022-04-07 15:39:54.176
+!MESSAGE Error opening \\.\COM3 (5)
+!STACK 0
+java.io.IOException: Error opening \\.\COM3 (5)
+	at org.eclipse.cdt.serial.SerialPort.open0(Native Method)
+	at org.eclipse.cdt.serial.SerialPort.open(SerialPort.java:316)
+	at org.eclipse.remote.serial.core.SerialPortCommandShell.<init>(SerialPortCommandShell.java:31)
+	at org.eclipse.remote.serial.core.SerialPortConnection.getCommandShell(SerialPortConnection.java:90)
+	at org.eclipse.remote.internal.console.TerminalConsoleConnector$1.run(TerminalConsoleConnector.java:137)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.remote.console 4 0 2022-04-07 15:40:16.947
+!MESSAGE Error opening \\.\COM3 (5)
+!STACK 0
+java.io.IOException: Error opening \\.\COM3 (5)
+	at org.eclipse.cdt.serial.SerialPort.open0(Native Method)
+	at org.eclipse.cdt.serial.SerialPort.open(SerialPort.java:316)
+	at org.eclipse.remote.serial.core.SerialPortCommandShell.<init>(SerialPortCommandShell.java:31)
+	at org.eclipse.remote.serial.core.SerialPortConnection.getCommandShell(SerialPortConnection.java:90)
+	at org.eclipse.remote.internal.console.TerminalConsoleConnector$1.run(TerminalConsoleConnector.java:137)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

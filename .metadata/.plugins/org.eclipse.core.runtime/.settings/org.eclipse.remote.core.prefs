@@ -1,0 +1,11 @@
+connections/org.eclipse.remote.serial.core.connectionType/logBink/serial.baudRate=11
+connections/org.eclipse.remote.serial.core.connectionType/logBink/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/logBink/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/logBink/serial.portName=COM3
+connections/org.eclipse.remote.serial.core.connectionType/logBink/serial.stopBits=0
+connections/org.eclipse.remote.serial.core.connectionType/print/serial.baudRate=0
+connections/org.eclipse.remote.serial.core.connectionType/print/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/print/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/print/serial.portName=COM3
+connections/org.eclipse.remote.serial.core.connectionType/print/serial.stopBits=0
+eclipse.preferences.version=1
