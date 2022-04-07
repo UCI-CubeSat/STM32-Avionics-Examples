@@ -20,8 +20,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include <stdio.h>
-#include <logging/logging_stack.h>
-
+#include "FreeRTOS-Plus/Source/Utilities/logging/logging_stack.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */

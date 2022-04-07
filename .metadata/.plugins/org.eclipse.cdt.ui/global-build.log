@@ -1,7 +1,17 @@
-15:55:36 **** Incremental Build of configuration Debug for project logBlink ****
+16:53:48 **** Incremental Build of configuration Debug for project logBlink ****
 make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "logBlink.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mengjie\STM32Cube-workspace-AV\DataLog\logBlink\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="logBlink.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: logBlink.elf
+ 
 arm-none-eabi-size   logBlink.elf 
+arm-none-eabi-objdump -h -S  logBlink.elf  > "logBlink.list"
+arm-none-eabi-objcopy  -O binary  logBlink.elf  "logBlink.bin"
    text	   data	    bss	    dec	    hex	filename
   30416	    124	   8332	  38872	   97d8	logBlink.elf
 Finished building: default.size.stdout
+ 
+Finished building: logBlink.bin
+ 
+Finished building: logBlink.list
  

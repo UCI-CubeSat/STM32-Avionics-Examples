@@ -22,7 +22,6 @@
 #include <stdio.h>
 #include <logging/logging_stack.h>
 
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

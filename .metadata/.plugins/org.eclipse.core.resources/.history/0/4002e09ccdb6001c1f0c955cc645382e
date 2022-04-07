@@ -20,6 +20,22 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include <stdio.h>
+
+
+/* Logging configurations for the application. */
+
+/* Set the application log name. */
+#ifndef LIBRARY_LOG_NAME
+    LIBRARY_LOG_NAME    "MyApplication"
+#endif
+
+/* Set the logging verbosity level. */
+#ifndef LIBRARY_LOG_LEVEL
+    LIBRARY_LOG_LEVEL    LOG_INFO
+#endif
+
+
+/************ End of logging configuration ****************/
 #include <logging/logging_stack.h>
 
 
