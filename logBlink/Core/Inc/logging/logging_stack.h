@@ -44,7 +44,7 @@
 
 /* Set the application log name. */
 #ifndef LIBRARY_LOG_NAME
-	#define LIBRARY_LOG_NAME   "MyApplication"
+	#define LIBRARY_LOG_NAME   "MyLogSystem"
 #endif
 
 /* Set the logging verbosity level. */
@@ -52,6 +52,16 @@
 	#define LIBRARY_LOG_LEVEL    LOG_INFO
 #endif
 
+/* Define the metadata information to add in each log.*/
+#if !defined( LOG_METADATA_FORMAT ) && !defined( LOG_METADATA_ARGS )
+   #define LOG_METADATA_FORMAT "[%s:%d]"
+   #define LOG_METADATA_ARGS __FILE__, __LINE__
+#endif
+
+/* Define the platform-specific logging function to call from*/
+#ifndef sdkLog
+	#define SdkLog(string) printf string
+#endif
 
 /************ End of logging configuration ****************/
 /**
