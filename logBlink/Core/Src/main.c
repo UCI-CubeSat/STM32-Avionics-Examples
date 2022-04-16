@@ -19,13 +19,14 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-#include <stdio.h>
-#include <logging/logging_stack.h>
+//#include "logging/logging.h"
 
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include <logging/logging_stack.h>
+#include "retarget.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -113,7 +114,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  RetargetInit(&huart2);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -144,6 +145,7 @@ int main(void)
   blink01Handle = osThreadNew(StartBlink01, NULL, &blink01_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
+  //vLoggingInit(pdTRUE, pdFALSE, pdFALSE, pdFALSE, pdFALSE);
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
@@ -299,13 +301,14 @@ void StartBlink01(void *argument)
   for(;;)
   {
 	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-	  char msg[] = "The LED blinks.";
+	  char msg[] = "The LED blinks.\r\n";
+	  printf(msg);
 	  if (osMessageQueuePut(myQueue01Handle, msg, 40, 0) == osOK){
-		  printf("Successfully send the message to queue.");
+		  printf("Successfully send the message to queue.\r\n");
 		  char receive_msg;
 		  if (osMessageQueueGet(myQueue01Handle, &receive_msg, NULL, 0U) == osOK ){
-			  printf(&receive_msg);
-			  osDelay(5000);
+			  printf("Received msg: %s\r\n", &receive_msg);
+			  osMessageQueueReset(myQueue01Handle);
 		  }
 	  }
 	  osDelay(500);
