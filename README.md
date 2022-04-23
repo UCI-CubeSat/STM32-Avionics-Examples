@@ -7,6 +7,6 @@ How to see messages printed by the standard C library functions printf
   3. Open PuTTY.
   4. Choose "Serial"
   5. "Serial line" is Nucleo’s COM port.
-  6. "Speed" is 115200.
+  6. "Speed" is 115200 (default).
   7. Click Open
   8. Run the project, then you can see printed messages
