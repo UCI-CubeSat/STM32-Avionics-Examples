@@ -19,8 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-//#include "logging/logging.h"
-
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -76,11 +74,25 @@ static void MX_USART2_UART_Init(void);
 void StartBlink01(void *argument);
 
 /* USER CODE BEGIN PFP */
+/* Private function prototypes ----------------------------------------------*/
+#ifdef __GNUC__
+
+	#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#else
+	#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+
+#endif /* __GNUC__ */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+PUTCHAR_PROTOTYPE
+{
+	HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
+
+	return ch;
+}
 
 /* USER CODE END 0 */
 
@@ -107,14 +119,14 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  //ITM_Port32(31) = 1;
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  RetargetInit(&huart2);
+  //RetargetInit(&huart2);
   /* USER CODE END 2 */
 
   /* Init scheduler */

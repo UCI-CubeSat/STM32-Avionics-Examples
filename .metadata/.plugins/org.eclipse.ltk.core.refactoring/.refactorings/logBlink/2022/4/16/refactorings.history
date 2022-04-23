@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;logBlink/Core/Inc/ retarget.h&apos; to &apos;retarget.h&apos;" description="Rename resource &apos; retarget.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/ retarget.h" name="retarget.h" stamp="1650145482222" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;logBlink/Core/Src/ retarget.c&apos; to &apos;retarget.c&apos;" description="Rename resource &apos; retarget.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/ retarget.c" name="retarget.c" stamp="1650149368582" updateReferences="true"/>
+</session>
